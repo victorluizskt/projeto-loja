@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 /*
@@ -18,29 +19,31 @@ public class Lot {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idLot;
-    private Date validityLot;
+    private Integer idLot;
+    private Calendar validityLot;
     private int quantityLot;
 
-    public Lot(int idLot, Date validityLot, int quantityLot) {
+    public Lot(int idLot, Calendar validityLot, int quantityLot) {
         this.idLot = idLot;
         this.validityLot = validityLot;
         this.quantityLot = quantityLot;
     }
+    public Lot(){
 
-    public int getIdLot() {
+    }
+    public Integer getIdLot() {
         return idLot;
     }
 
-    public void setIdLot(int idLot) {
+    public void setIdLot(Integer idLot) {
         this.idLot = idLot;
     }
 
-    public Date getValidityLot() {
+    public Calendar getValidityLot() {
         return validityLot;
     }
 
-    public void setValidityLot(Date validityLot) {
+    public void setValidityLot(Calendar validityLot) {
         this.validityLot = validityLot;
     }
 
@@ -57,7 +60,7 @@ public class Lot {
         if (this == o) return true;
         if (!(o instanceof Lot)) return false;
         Lot lot = (Lot) o;
-        return idLot == lot.idLot &&
+        return idLot.equals(lot.idLot) &&
                 quantityLot == lot.quantityLot &&
                 Objects.equals(validityLot, lot.validityLot);
     }
@@ -75,4 +78,16 @@ public class Lot {
                 ", quantityLot=" + quantityLot +
                 '}';
     }
+
+    /*
+       Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, 1995);
+        c.set(Calendar.MONTH, Calendar.MARCH);
+        c.set(Calendar.DAY_OF_MONTH, 20);
+        Lot lot = new Lot();
+        LotDAO lotDAO = new LotDAO();
+        lot.setValidityLot(c);
+        lot.setQuantityLot(10);
+        lotDAO.save(lot);
+     */
 }
