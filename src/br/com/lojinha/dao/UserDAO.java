@@ -71,6 +71,12 @@ public class UserDAO {
         return userList;
     }
 
+    /**
+     *
+     *  Metódo responsável por verificar se tenho algum email ou username repetido, sendo assim proibindo
+     * a função save de salvar users e emails repetidos.
+     * @param user Necessário para verificar com minha lista.
+     */
     private boolean verifiedEmailAndUser(User user){
         List<User> userList = findAll();
         for (User value : userList) {
