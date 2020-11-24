@@ -13,24 +13,24 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codeProduct;
+    private Integer codeProduct;
     private String nameProduct;
     private double priceProduct;
     @ManyToOne
     private Lot lotProduct;
 
-    public Product(int codeProduct, String nameProduct, double priceProduct, Lot lotProduct) {
+    public Product(Integer codeProduct, String nameProduct, double priceProduct, Lot lotProduct) {
         this.codeProduct = codeProduct;
         this.nameProduct = nameProduct;
         this.priceProduct = priceProduct;
         this.lotProduct = lotProduct;
     }
 
-    public int getCodeProduct() {
+    public Integer getCodeProduct() {
         return codeProduct;
     }
 
-    public void setCodeProduct(int codeProduct) {
+    public void setCodeProduct(Integer codeProduct) {
         this.codeProduct = codeProduct;
     }
 
