@@ -5,8 +5,10 @@ import java.util.Objects;
 /*
  * @brief Classe User
  * @author Victor Luiz Gonçalves
- * @date 10/11/2020
- * @since 10/11/2020
+ * @date 24/11/2020
+ * @since 24/11/2020
+ *
+ * Classe produto.
  */
 @Entity
 public class Product {
@@ -24,6 +26,10 @@ public class Product {
         this.nameProduct = nameProduct;
         this.priceProduct = priceProduct;
         this.lotProduct = lotProduct;
+    }
+
+    public Product(){
+
     }
 
     public Integer getCodeProduct() {
@@ -82,4 +88,17 @@ public class Product {
                 ", lotProduct=" + lotProduct +
                 '}';
     }
+
+    /*
+    Product product = new Product();
+        Lot lot = new Lot();
+        LotDAO lotDAO = new LotDAO();
+        lot = lotDAO.findById(2);
+        product.setLotProduct(lot);
+        product.setNameProduct("Arroz");
+        product.setPriceProduct(25.99);
+        ProductDAO productDAO = new ProductDAO();
+
+        productDAO.save(product);
+     */
 }

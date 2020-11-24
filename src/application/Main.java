@@ -7,10 +7,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /*
- * @brief Classe Main
+ * @brief Classe User
  * @author Victor Luiz Gonçalves
- * @date 10/11/2020
- * @since 10/11/2020
+ * @date 24/11/2020
+ * @since 24/11/2020
+ *
+ * Classe responsável por abrir o FXML e startar a aplicação.
+ *
  */
 
 

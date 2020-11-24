@@ -12,9 +12,12 @@ import java.util.Objects;
 /*
  * @brief Classe User
  * @author Victor Luiz Gonçalves
- * @date 10/11/2020
- * @since 10/11/2020
+ * @date 24/11/2020
+ * @since 24/11/2020
+ *
+ * Classe usuário.
  */
+
 @Entity
 public class User {
 

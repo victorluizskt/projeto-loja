@@ -1,8 +1,10 @@
 package application;
 
 import br.com.lojinha.dao.LotDAO;
+import br.com.lojinha.dao.ProductDAO;
 import br.com.lojinha.dao.UserDAO;
 import br.com.lojinha.model.Lot;
+import br.com.lojinha.model.Product;
 import br.com.lojinha.model.User;
 
 import java.text.DateFormat;

@@ -2,10 +2,17 @@ package br.com.lojinha.dao;
 
 import br.com.lojinha.connection.ConnectionFactory;
 import br.com.lojinha.model.User;
-
 import javax.persistence.EntityManager;
 import java.util.List;
-
+/*
+ * @brief Classe User
+ * @author Victor Luiz Gonçalves
+ * @date 24/11/2020
+ * @since 24/11/2020
+ *
+ * Classe responsável por salvar, excluir e editar arquivos do Usuário.
+ *
+ */
 public class UserDAO {
 
     public User save(User user){

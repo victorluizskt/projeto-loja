@@ -1,12 +1,18 @@
 package br.com.lojinha.dao;
 
 import br.com.lojinha.connection.ConnectionFactory;
-import br.com.lojinha.model.Lot;
 import br.com.lojinha.model.Product;
-
 import javax.persistence.EntityManager;
 import java.util.List;
-
+/*
+ * @brief Classe User
+ * @author Victor Luiz Gonçalves
+ * @date 24/11/2020
+ * @since 24/11/2020
+ *
+ * Classe responsável por salvar, excluir e editar arquivos do Produto.
+ *
+ */
 public class ProductDAO {
     public Product save(Product product){
         EntityManager entityManager = new ConnectionFactory().getConnection();
