@@ -79,7 +79,7 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = cryptography(password);
     }
 
     public String getEmail() {
@@ -122,7 +122,6 @@ public class User {
                 for (byte b : messageDigest) {
                     hexString.append(String.format("%02X", 0xFF & b));
                 }
-                System.out.println(hexString.toString() + " O que retorna");
                 return hexString.toString();
             }
         } catch (NoSuchAlgorithmException noSuchAlgorithmException) {
