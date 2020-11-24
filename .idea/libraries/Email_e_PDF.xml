@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Email e PDF">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../developer/itext e javamail/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../developer/itext e javamail/mail.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../developer/itext e javamail/jar_files" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../developer/itext e javamail/jar_files" recursive="false" />
+  </library>
+</component>
