@@ -5,7 +5,6 @@
         <!-- Implementação do JPA -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!-- Lista de entidades -->
-        <class>br.com.lojinha.model.Item</class>
         <class>br.com.lojinha.model.Lot</class>
         <class>br.com.lojinha.model.Product</class>
         <class>br.com.lojinha.model.User</class>
