@@ -1,6 +1,7 @@
 package br.com.lojinha.model;
 
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 @Entity
@@ -8,16 +9,20 @@ public class Sale {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codSale;
-    private Date dateSale;
-    @ManyToOne
+    private Calendar dateSale;
+    @OneToMany(mappedBy = "Order")
     private Order order;
     private User user;
 
-    public Sale(int codSale, Date dateSale, Order order, User user) {
+    public Sale(int codSale, Calendar dateSale, Order order, User user) {
         this.codSale = codSale;
         this.dateSale = dateSale;
         this.order = order;
         this.user = user;
+    }
+
+    public Sale(){
+
     }
 
     public int getCodSale() {
@@ -28,11 +33,11 @@ public class Sale {
         this.codSale = codSale;
     }
 
-    public Date getDateSale() {
+    public Calendar getDateSale() {
         return dateSale;
     }
 
-    public void setDateSale(Date dateSale) {
+    public void setDateSale(Calendar dateSale) {
         this.dateSale = dateSale;
     }
 

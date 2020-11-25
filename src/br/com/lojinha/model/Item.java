@@ -1,8 +1,12 @@
 package br.com.lojinha.model;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import java.util.Objects;
+@Entity
 public class Item {
 
+    @OneToMany
     private Product product;
     private double priceItem;
     private int quantityItem;

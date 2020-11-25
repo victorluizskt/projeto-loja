@@ -8,6 +8,9 @@
         <class>br.com.lojinha.model.Lot</class>
         <class>br.com.lojinha.model.Product</class>
         <class>br.com.lojinha.model.User</class>
+        <class>br.com.lojinha.model.Order</class>
+        <class>br.com.lojinha.model.Item</class>
+        <class>br.com.lojinha.model.Sale</class>
         <properties>
             <!-- Propriedades JDBC -->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
