@@ -69,7 +69,7 @@ public class Product {
         if (this == o) return true;
         if (!(o instanceof Product)) return false;
         Product product = (Product) o;
-        return codeProduct == product.codeProduct &&
+        return codeProduct.equals(product.codeProduct) &&
                 nameProduct.equals(product.nameProduct) &&
                 lotProduct.equals(product.lotProduct);
     }
