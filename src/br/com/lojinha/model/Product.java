@@ -28,6 +28,12 @@ public class Product {
         this.lotProduct = lotProduct;
     }
 
+    public Product(String nameProduct, double priceProduct, Lot lotProduct) {
+        this.nameProduct = nameProduct;
+        this.priceProduct = priceProduct;
+        this.lotProduct = lotProduct;
+    }
+
     public Product(){
 
     }

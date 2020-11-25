@@ -3,11 +3,13 @@ package br.com.lojinha.model;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import java.util.Objects;
+
 @Entity
 public class Item {
 
     @ManyToOne
     private Product product;
+
     private double priceItem;
     private int quantityItem;
 
@@ -15,6 +17,10 @@ public class Item {
         this.product = product;
         this.priceItem = priceItem;
         this.quantityItem = quantityItem;
+    }
+
+    public Item(){
+
     }
 
     public Product getProduct() {

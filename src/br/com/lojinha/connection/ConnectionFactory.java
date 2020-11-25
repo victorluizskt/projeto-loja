@@ -15,7 +15,7 @@ import javax.persistence.Persistence;
  */
 public class ConnectionFactory {
 
-    private static final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("meuPU");
+    private static final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("funcionaPU");
 
     /**
      *
