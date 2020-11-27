@@ -16,7 +16,7 @@ import java.util.Objects;
  */
 
 @Entity
-public class Lot {
+public class Lot implements BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -78,6 +78,11 @@ public class Lot {
                 ", validityLot=" + validityLot +
                 ", quantityLot=" + quantityLot +
                 '}';
+    }
+
+    @Override
+    public Integer getId() {
+        return null;
     }
 
     /*
