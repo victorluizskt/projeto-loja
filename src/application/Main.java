@@ -32,4 +32,43 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+    /*
+     Sale sale = new Sale();
+
+        Product product;
+        ProductDAO productDAO = new ProductDAO();
+
+
+        product = productDAO.findById(2);
+        Item item = new Item();
+        item.setProduct(product);
+        item.setPriceItem(product.getPriceProduct());
+        item.setQuantityItem(10);
+
+        Order order = new Order();
+        order.add(item);
+
+        product = productDAO.findById(1);
+        Item item2 = new Item();
+        item2.setProduct(product);
+        item2.setPriceItem(product.getPriceProduct());
+        item2.setQuantityItem(10);
+
+        order.add(item2);
+
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, 1995);
+        c.set(Calendar.MONTH, Calendar.MARCH);
+        c.set(Calendar.DAY_OF_MONTH, 20);
+
+
+        UserDAO userDAO = new UserDAO();
+        User user = userDAO.findById(1);
+        sale.setUser(user);
+        sale.setDateSale(c);
+        sale.setOrder(order);
+        SaleDAO saleDAO = new SaleDAO();
+        saleDAO.save(sale);
+     */
 }

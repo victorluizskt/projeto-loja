@@ -1,23 +1,26 @@
 package br.com.lojinha.model;
-
 import javax.persistence.*;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Objects;
+
 @Entity
 public class Sale {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codSale;
     private Calendar dateSale;
-    @OneToMany(mappedBy = "Order")
-    private Order order;
+
+    @OneToOne
+    private OrderModel orderModel;
+
+    @OneToOne
     private User user;
 
-    public Sale(int codSale, Calendar dateSale, Order order, User user) {
+    public Sale(int codSale, Calendar dateSale, OrderModel orderModel, User user) {
         this.codSale = codSale;
         this.dateSale = dateSale;
-        this.order = order;
+        this.orderModel = orderModel;
         this.user = user;
     }
 
@@ -41,12 +44,12 @@ public class Sale {
         this.dateSale = dateSale;
     }
 
-    public Order getOrder() {
-        return order;
+    public OrderModel getOrder() {
+        return orderModel;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setOrder(OrderModel orderModel) {
+        this.orderModel = orderModel;
     }
 
     public User getUser() {
@@ -64,13 +67,13 @@ public class Sale {
         Sale sale = (Sale) o;
         return codSale == sale.codSale &&
                 Objects.equals(dateSale, sale.dateSale) &&
-                Objects.equals(order, sale.order) &&
+                Objects.equals(orderModel, sale.orderModel) &&
                 Objects.equals(user, sale.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codSale, dateSale, order, user);
+        return Objects.hash(codSale, dateSale, orderModel, user);
     }
 
     @Override
@@ -78,7 +81,7 @@ public class Sale {
         return "Sale{" +
                 "codSale=" + codSale +
                 ", dateSale=" + dateSale +
-                ", order=" + order +
+                ", order=" + orderModel +
                 ", client='" + user + '\'' +
                 '}';
     }

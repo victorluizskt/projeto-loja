@@ -1,21 +1,26 @@
 package br.com.lojinha.model;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Objects;
 @Entity
 public class Item {
 
-    @OneToMany
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @OneToOne
     private Product product;
     private double priceItem;
     private int quantityItem;
 
-    public Item(Product product, double priceItem, int quantityItem) {
+    public Item(Integer id, Product product, double priceItem, int quantityItem) {
+        this.id = id;
         this.product = product;
         this.priceItem = priceItem;
         this.quantityItem = quantityItem;
     }
+
+    public Item( ){ }
 
     public Product getProduct() {
         return product;
@@ -50,6 +55,15 @@ public class Item {
                 quantityItem == item.quantityItem &&
                 Objects.equals(product, item.product);
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
 
     @Override
     public int hashCode() {

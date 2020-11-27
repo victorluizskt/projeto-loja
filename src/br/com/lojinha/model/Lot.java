@@ -24,7 +24,7 @@ public class Lot {
     private Calendar validityLot;
     private int quantityLot;
 
-    public Lot(int idLot, Calendar validityLot, int quantityLot) {
+    public Lot(Integer idLot, Calendar validityLot, int quantityLot) {
         this.idLot = idLot;
         this.validityLot = validityLot;
         this.quantityLot = quantityLot;

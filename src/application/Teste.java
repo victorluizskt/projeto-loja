@@ -1,40 +1,31 @@
 package application;
 
-import br.com.lojinha.dao.ProductDAO;
-import br.com.lojinha.dao.UserDAO;
+import br.com.lojinha.dao.*;
 import br.com.lojinha.model.*;
+import org.hibernate.criterion.Order;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Teste {
     public static void main(String[] args) {
-        Sale sale = new Sale();
-        Order order = new Order();
+       Calendar c = Calendar.getInstance();
+       c.set(Calendar.YEAR, 1995);
+       c.set(Calendar.MONTH, Calendar.MARCH);
+       c.set(Calendar.DAY_OF_MONTH, 20);
+       UserDAO userDAO = new UserDAO();
+       User user = userDAO.findById(1);
 
-        Product product;
-        ProductDAO productDAO = new ProductDAO();
-        product = productDAO.findById(1);
+       OrderDAO orderDAO = new OrderDAO();
+       OrderModel order = orderDAO.findById(3);
+       orderDAO.save(order);
 
-        Item item = new Item(product, product.getPriceProduct(), 5);
+       Sale sale = new Sale();
+       sale.setUser(user);
+       sale.setOrder(order);
+       sale.setDateSale(c);
 
-        order.add(item);
-
-        product = productDAO.findById(2);
-        item = new Item(product, product.getPriceProduct(), 2);
-
-        order.add(item);
-
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.YEAR, 1995);
-        c.set(Calendar.MONTH, Calendar.MARCH);
-        c.set(Calendar.DAY_OF_MONTH, 20);
-
-
-        UserDAO userDAO = new UserDAO();
-        User user = userDAO.findById(1);
-        sale.setUser(user);
-        sale.setDateSale(c);
-        sale.setOrder(order);
-
+       SaleDAO saleDAO = new SaleDAO();
+       saleDAO.save(sale);
     }
 }

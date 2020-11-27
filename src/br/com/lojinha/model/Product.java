@@ -19,19 +19,19 @@ public class Product {
     private String nameProduct;
     private double priceProduct;
     @ManyToOne
-    private Lot lotProduct;
+    private Lot lot;
 
-    public Product(Integer codeProduct, String nameProduct, double priceProduct, Lot lotProduct) {
+    public Product(Integer codeProduct, String nameProduct, double priceProduct, Lot lot) {
         this.codeProduct = codeProduct;
         this.nameProduct = nameProduct;
         this.priceProduct = priceProduct;
-        this.lotProduct = lotProduct;
+        this.lot = lot;
     }
 
-    public Product(String nameProduct, double priceProduct, Lot lotProduct) {
+    public Product(String nameProduct, double priceProduct, Lot lot) {
         this.nameProduct = nameProduct;
         this.priceProduct = priceProduct;
-        this.lotProduct = lotProduct;
+        this.lot = lot;
     }
 
     public Product(){
@@ -63,11 +63,11 @@ public class Product {
     }
 
     public Lot getLotProduct() {
-        return lotProduct;
+        return lot;
     }
 
-    public void setLotProduct(Lot lotProduct) {
-        this.lotProduct = lotProduct;
+    public void setLotProduct(Lot lot) {
+        this.lot = lot;
     }
 
     @Override
@@ -77,12 +77,12 @@ public class Product {
         Product product = (Product) o;
         return codeProduct.equals(product.codeProduct) &&
                 nameProduct.equals(product.nameProduct) &&
-                lotProduct.equals(product.lotProduct);
+                lot.equals(product.lot);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codeProduct, nameProduct, priceProduct, lotProduct);
+        return Objects.hash(codeProduct, nameProduct, priceProduct, lot);
     }
 
     @Override
@@ -91,7 +91,7 @@ public class Product {
                 "codeProduct=" + codeProduct +
                 ", nameProduct='" + nameProduct + '\'' +
                 ", priceProduct='" + priceProduct + '\'' +
-                ", lotProduct=" + lotProduct +
+                ", lotProduct=" + lot +
                 '}';
     }
 
